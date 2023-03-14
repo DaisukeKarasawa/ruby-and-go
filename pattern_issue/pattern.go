@@ -25,6 +25,7 @@ func eachGravity(p string) float64 {
 	}
 }
 
+// マイル (1m = 0.000621371) に変換
 func changeMeterToMile(s float64) float64 {
 	mile := 0.000621371
 	return s * mile

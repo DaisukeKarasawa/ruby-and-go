@@ -7,7 +7,7 @@
   changeMeterToMile(eachGravity(planet) * (time ** 2) / 2).floor  # 小数点以下切り捨て
   fallingDistance("Jupiter",1000).class                           # Integer
 ```
-最後に「.floor」を使うだけで小数点以下が切り捨てられ、切り捨て前の計算 (Float) が自然と戻り値は Integer になる
+最後に「.floor」を使うだけで小数点以下が切り捨てられ、切り捨て前の計算 (Float) が自然とInteger になる
 
 #### [Goの場合](https://github.com/DaisukeKarasawa/important-code/blob/master/pattern_issue/pattern.go)
 ```go:pattern.go
