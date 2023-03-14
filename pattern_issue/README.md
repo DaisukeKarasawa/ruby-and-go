@@ -1,7 +1,7 @@
 ## 今までRubyを使っていた自分が、Goを書いていて感じた静的型付け言語の難しさ
 
 ### 物体の自由落下について、落下距離を返すプログラム
-#### [Rubyの場合]()
+#### [Rubyの場合](https://github.com/DaisukeKarasawa/important-code/blob/master/pattern_issue/pattern.rb)
 ```ruby:pattern.rb
   changeMeterToMile(eachGravity(planet) * (time ** 2) / 2).class  # Float
   changeMeterToMile(eachGravity(planet) * (time ** 2) / 2).floor  # 小数点以下切り捨て
@@ -9,7 +9,7 @@
 ```
 最後に「.floor」を使うだけで小数点以下が切り捨てられ、切り捨て前の計算 (Float) が自然と戻り値は Integer になる
 
-#### [Goの場合]()
+#### [Goの場合](https://github.com/DaisukeKarasawa/important-code/blob/master/pattern_issue/pattern.go)
 ```go:pattern.go
 func fallingDistance(planet string, time int) (height int) {
 	height = int(math.Trunc(changeMeterToMile(eachGravity(planet) * math.Pow(float64(time), 2) / 2)))
