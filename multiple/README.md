@@ -3,7 +3,7 @@
 ### 末尾再帰で空間計算量を削減する
 元の関数に、計算途中の結果を保存する引数を追加（補助関数を使用）して進んでいくので、呼び出し元に戻る必要がなく、スタックの累積が無くなるので、空間計算量を削減できる
 
-### [空間計算量が多い場合]()
+### [空間計算量が多い場合](https://github.com/DaisukeKarasawa/important-code/blob/master/multiple/bad_ex.rb)
 優先度の高いものから実行を開始し、終了したあとにその呼び出し元に戻る必要がある
 #### スタックの状態（ n == 3 )
 ```ruby:bad_ex.rb
@@ -18,7 +18,7 @@ multiplication(3 - 1) + 3               # push される
 6
 ```
 
-### [空間計算量が少ない場合]()
+### [空間計算量が少ない場合](https://github.com/DaisukeKarasawa/important-code/blob/master/multiple/good_ex.rb)
 関数呼び出しがコールスタックに push された後、呼び出し元に戻る必要がないので、終了と共に pop される。
 そして新しい関数呼び出しが push される（空間計算量＝１）
 #### スタックの状態（ n == 3 ）
