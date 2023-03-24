@@ -5,3 +5,7 @@
 ### [静的型付け言語：Go](https://github.com/DaisukeKarasawa/important-code/tree/master/pattern_issue)
 
 今までRubyで書いていた自分が、Goの学習内で静的型付け言語について感じたこと
+
+### [break]()
+
+RubyとGoそれぞれのbreakの使い方やreturnとの違いなど
