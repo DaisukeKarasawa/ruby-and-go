@@ -6,7 +6,9 @@ break を使用すると、繰り返し処理を脱出することが出来る�
 
 ### RubyとGoの違い
 
-*Ruby*：繰り返し処理のみにしか break を使用できない。(each, while, until, for)
+*Ruby*：
+
+繰り返し処理のみにしか break を使用できない。(each, while, until, for)
 ```
 def control(n)
   break if n == 2   # Invalid break
@@ -16,15 +18,19 @@ def control(n)
     break           # Invalid break
   end
 end
+
+control(2)
 ```
-*Go*：Ruby と同じくif文では使用できないが、switch文では使用できる。(for, switch, select)
+*Go*：
+
+Ruby と同じくif文では使用できないが、switch文では使用できる。(for, switch, select)
 
 (＝ Goの場合、break は繰り返し処理以外にも使うことが出来る)
 ```
 func control(n int)  {
-	if n == 2 {
-		break    // break not in for, switch, or select statement
-	}
+  if n == 2 {
+    break    // break not in for, switch, or select statement
+  }
 
   switch n {
   case 10:
@@ -35,7 +41,7 @@ func control(n int)  {
 
 ### breakとreturnの違い
 
-break を使うと「**繰り返し処理からの脱出**」になるが、return を使うと「**(繰り返し処理のみならず)メソッド・関数など大本からの脱出**」になる。
+break は「繰り返し処理からの脱出」になるが、return を使うと「(繰り返し処理のみならず)メソッド・関数など大本からの脱出」になる。
 ```
 # Ruby
 def control1
@@ -88,18 +94,18 @@ func main() {
 		fmt.Println(i)        // 0
 		return                // main関数から脱出する
 	}
-	fmt.Println("braek")    // 処理されない
+  fmt.Println("braek")    // 処理されない
 }
 ```
 
-### [throwとcatchによる大域脱出（Ruby）]()
+### [throwとcatchによる大域脱出（Ruby）](https://github.com/DaisukeKarasawa/ruby-and-go/blob/master/control_syntax/control.rb)
 
 Rubyの場合、break では一番内側の繰り返し処理しか脱出できないので、
 
 一気に外側のループまで脱出したい場合は、Kernelモジュールのthrowメソッドとcatchメソッドを使用する。
 ```
 catch タグ do
-  # ...処理
+  ...処理
   throw タグ
 end
 ```
@@ -109,7 +115,7 @@ end
 
 ・通常タグにはシンボルを使用し、throw と catch のタグが一致しない場合はエラーが発生する。
 
-・繰り返し処理と無関係に利用することも可能
+・繰り返し処理と無関係に利用することも可能。
 
 ・throw に第二引数を渡すと catchメソッドの戻り値になる。
 ```
@@ -121,7 +127,7 @@ num =
 puts num  # 100
 ```
 
-### [ラベル付きによる大域脱出（Go）]()
+### [ラベル付きによる大域脱出（Go）](https://github.com/DaisukeKarasawa/ruby-and-go/blob/master/control_syntax/control.go)
 
 Rubyと同じように、通常の break では自分の属するブロックの一階層分しか脱出できないので、
 
@@ -140,7 +146,7 @@ Rubyと同じように、通常の break では自分の属するブロックの
 
 ##### 余談
 
-Goには関数内の任意の位置へジャンプするための goto文が用意されている。
+Goには関数内の任意の位置へジャンプするためのgoto文が用意されている。
 ```
 // contol.go のラベル付きforループを goto で書き直した場合
 for {
@@ -166,6 +172,5 @@ OuterLoop:
 （条件によって変数が定義される場合と定義されない場合が発生する処理は、書くことが出来ない）
 
 ４：goto の使用は、プログラムの制御フローを追跡するのが難しくなり、プログラムを理解しにくく、
-
-変更が困難になるため、**使用を避けるべき**だと言われている。
+　　変更が困難になるため、**使用を避けるべき**。
 

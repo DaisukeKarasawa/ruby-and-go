@@ -6,6 +6,6 @@
 
 今までRubyで書いていた自分が、Goの学習内で静的型付け言語について感じたこと
 
-### [break]()
+### [break](https://github.com/DaisukeKarasawa/ruby-and-go/tree/master/control_syntax)
 
 RubyとGoそれぞれのbreakの使い方やreturnとの違いなど
