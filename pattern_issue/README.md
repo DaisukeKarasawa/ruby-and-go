@@ -13,8 +13,8 @@
 #### [Goの場合](https://github.com/DaisukeKarasawa/important-code/blob/master/pattern_issue/pattern.go)
 ```go:pattern.go
 func fallingDistance(planet string, time int) (height int) {
-	height = int(math.Trunc(changeMeterToMile(eachGravity(planet) * math.Pow(float64(time), 2) / 2)))
-	return
+  height = int(math.Trunc(changeMeterToMile(eachGravity(planet) * math.Pow(float64(time), 2) / 2)))
+  return
 }
 ```
 １）重力加速度 (eachGravity()) の戻り値が float で、mile の計算 (changeMeterToMile()) にも float の引数を渡す必要があるので、累乗する time を float64 でキャストする必要がある。

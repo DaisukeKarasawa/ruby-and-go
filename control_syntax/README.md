@@ -90,10 +90,10 @@ end
 ```
 // Go
 func main() {
-	for i := 0; i < 5; i++ {
-		fmt.Println(i)        // 0
-		return                // main関数から脱出する
-	}
+  for i := 0; i < 5; i++ {
+    fmt.Println(i)        // 0
+    return                // main関数から脱出する
+  }
   fmt.Println("braek")    // 処理されない
 }
 ```
@@ -150,13 +150,13 @@ Goには関数内の任意の位置へジャンプするためのgoto文が用�
 ```
 // contol.go のラベル付きforループを goto で書き直した場合
 for {
-	select {
-	case n := <-ch:
-		fmt.Println("receive", n)
-		goto OuterLoop    // OuterLoop へジャンプする
-	default:
-		loop()
-	}
+  select {
+  case n := <-ch:
+    fmt.Println("receive", n)
+    goto OuterLoop    // OuterLoop へジャンプする
+  default:
+    loop()
+  }
 }
 OuterLoop:
 ```
