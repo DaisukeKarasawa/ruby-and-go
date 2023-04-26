@@ -2,7 +2,7 @@
 
 Ruby と Go それぞれの break の使い方や return との違いなど
 
-### [ハッシュマップ（Ruby）](https://github.com/DaisukeKarasawa/ruby-and-go/blob/master/hashmap_create/hashmap.rb)
+### [ハッシュマップ（Ruby）](https://github.com/DaisukeKarasawa/ruby-and-go/tree/master/hashmap_create)
 
 ハッシュマップの作成において、気をつけること
 
