@@ -25,7 +25,7 @@ puts hashmap['age']    # => nil
 ```
 hashmap = Hash.new
 hashmap['age'] = 20
-puts hashmap['age']        # => 20
+puts hashmap['age']     # => 20
 ```
 
 ### Hash.new{0}
@@ -45,7 +45,7 @@ hashmap['age']          # => 0
 
 ### 使う上での大きな違い
 
-キーの値をカウントしていく処理を、'Hash.new' で作成する場合、先にキーと値をセットする必要がある。
+キーの値を加算代入してカウントしていく処理を、'Hash.new' で作成する場合、先にキーの値をセットする必要がある。
 
 ```
 def hashCount(hashmap)
